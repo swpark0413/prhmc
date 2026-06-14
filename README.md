@@ -11,7 +11,7 @@
 
    \[
    \tilde{U}(q) = U(q) + \lambda \psi\{\phi(q)/b\}.
-   ]\
+   \]
    
    Here $\phi$ is a **smooth boundary-violation surrogate**: it is small on feasible points and increases as the point moves outside $K$. This provides a differentiable approximation to a hard support constraint and keeps the numerical dynamics more stable.
 

@@ -8,14 +8,12 @@
 
 1. **Convex container.** The target support $K$ is embedded in a smooth convex container $\widetilde K$, such as a Euclidean or Frobenius ball. Reflections are performed only at the boundary of this container.
 2. **Smooth penalty extension.** Outside $K$, the potential is modified by a smooth penalty 
-
    $$
    \tilde{U}(q) = U(q) + \lambda \psi\{\phi(q)/b\}.
    $$
-
    Here $\phi$ is a **smooth boundary-violation surrogate**: it is small on feasible points and increases as the point moves outside $K$. This provides a differentiable approximation to a hard support constraint and keeps the numerical dynamics more stable.
 
-3. **Thinning / retention.** The Markov chain is simulated on the container $\widetilde K$. Samples that fall inside the original support $K$ are retained and used to estimate expectations under the original constrained target. For targets on the **Stiefel manifold** 
+4. **Thinning / retention.** The Markov chain is simulated on the container $\widetilde K$. Samples that fall inside the original support $K$ are retained and used to estimate expectations under the original constrained target. For targets on the **Stiefel manifold** 
 
    $$
    V_{r,u} = \left\{ \Gamma \in \mathbb R^{r\times u} : \Gamma^\top \Gamma = I_u \right\},

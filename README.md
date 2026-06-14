@@ -6,12 +6,12 @@
 
 **Reflective Hamiltonian Monte Carlo (ReHMC)** samples from a distribution supported on a bounded domain by reflecting the Hamiltonian trajectory at the boundary of a feasible container. This repository implements a **convex-container-plus-thinning** approach for constrained targets. The main idea is to run reflective HMC on a simple smooth convex container and to use a smooth penalty to discourage trajectories from spending too much time outside the target support.
 
-1. **Convex container.** The target support $K$ is embedded in a smooth convex container $\widetilde K$, such as a Euclidean or Frobenius ball. Reflections are performed only at the boundary of this container.
-2. **Smooth penalty extension.** Outside $K$, the potential is modified by a smooth penalty
+1.**Convex container.** The target support $K$ is embedded in a smooth convex container $\widetilde K$, such as a Euclidean or Frobenius ball. Reflections are performed only at the boundary of this container.
+2.**Smooth penalty extension.** Outside $K$, the potential is modified by a smooth penalty
 
-   $$
-   \tilde{U}(q) = U(q) + \lambda \psi\{\phi(q)/b\}.
-   $$
+$$
+\tilde{U}(q) = U(q) + \lambda \psi\{\phi(q)/b\}.
+$$
    
    Here $\phi$ is a **smooth boundary-violation surrogate**: it is small on feasible points and increases as the point moves outside $K$. This provides a differentiable approximation to a hard support constraint and keeps the numerical dynamics more stable.
 

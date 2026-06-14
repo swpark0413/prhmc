@@ -84,7 +84,7 @@ $$
 \pi(\Gamma)
 \propto
 \exp\left\{
-\omega \operatorname{tr}(A^\top \Gamma)
+\omega \mathrm{tr}(A^\top \Gamma)
 \right\},
 \qquad
 A =

@@ -52,7 +52,7 @@ The animation below illustrates the **container-based construction**. A chain ru
 trajectory reflects like a billiard ball, reversing only the velocity component normal to the boundary.
 
 <p align="center">
-  <img src="assets/prhmc_overview.gif" alt="PR-HMC overview" width="650">
+  <img src="assets/prhmc_overview.gif" alt="PR-HMC overview" width="500">
 </p>
 
 ## Repository layout

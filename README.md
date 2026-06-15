@@ -202,7 +202,7 @@ chain = out["chain"]   # (n_kept, d) samples inside the polytope
 |------|---------|
 | `R` | radius of the ball container $\widetilde K$ |
 | `c` | lower bound on $\lambda_{\min}(B^\top B)$ in the polar representation |
-| `M` | upper bound on $\|B\|_F^2$ |
+| `M` | upper bound on $\lVert B \rVert_F^2$ |
 | `lam_penalty` | strength $\lambda$ of the smooth penalty outside $K$ |
 | `rho` | boundary-layer width $b$ used in the penalty |
 | `barrier_power` | penalty power $\psi(z)=z^p$; the default is $p=4$ |

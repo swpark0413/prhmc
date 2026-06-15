@@ -197,24 +197,22 @@ chain = out["chain"]   # (n_kept, d) samples inside the polytope
 
 ## Key hyperparameters
 
----
 
-| Name              | Meaning                                                                  |
-| ----------------- | ------------------------------------------------------------------------ |
-| `R`             | radius of the ball container$\,\widetilde K$                           |
-| `c`             | lower bound on$\,\lambda_{\min}(B^\top B)$ in the polar representation |
-| `M`             | upper bound on$\|B\|_F^2$                                              |
-| `lam_penalty`   | strength$\lambda$ of the smooth penalty outside $K$                  |
-| `rho`           | boundary-layer width$b$ used in the penalty                            |
-| `barrier_power` | penalty power in$\psi(z)=z^p$; the default is $p=4$                  |
-| `barrier_pos`   | positive-part surrogate:`"softplus"`, `"hinge"`, or `"none"`       |
-| `num_steps`     | number of leapfrog steps per HMC proposal                                |
-| `step_size`     | leapfrog step size                                                       |
-| `target_accept` | target acceptance rate used in step-size adaptation                      |
+| Name | Meaning |
+|------|---------|
+| `R` | radius of the ball container $\widetilde K$ |
+| `c` | lower bound on $\lambda_{\min}(B^\top B)$ in the polar representation |
+| `M` | upper bound on $\|B\|_F^2$ |
+| `lam_penalty` | strength $\lambda$ of the smooth penalty outside $K$ |
+| `rho` | boundary-layer width $b$ used in the penalty |
+| `barrier_power` | penalty power $\psi(z)=z^p$; the default is $p=4$ |
+| `barrier_pos` | positive-part surrogate: `"softplus"`, `"hinge"`, or `"none"` |
+| `num_steps` | number of leapfrog steps per HMC proposal |
+| `step_size` | leapfrog step size |
+
+
 
 ## Citation
-
----
 
 ```bibtex
 @inproceedings{lee2026rehmc, 

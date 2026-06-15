@@ -2,8 +2,6 @@
 
 ## Overview
 
----
-
 **Reflective Hamiltonian Monte Carlo (ReHMC)** samples from a distribution supported on a bounded domain by reflecting the Hamiltonian trajectory at the boundary of a feasible container. This repository implements a **convex-container-plus-thinning** approach for constrained targets. The main idea is to run reflective HMC on a simple smooth convex container and to use a smooth penalty to discourage trajectories from spending too much time outside the target support.
 
 **Convex container.** The target support $K$ is embedded in a smooth convex container $\widetilde{K}$, such as a Euclidean or Frobenius ball. Reflections are performed only at the boundary of this container.
@@ -46,7 +44,6 @@ This gives the **Polar Reflective HMC (PR-HMC)** sampler. The lower bound $\lamb
 
 ## How it works
 
----
 
 The animation below illustrates the **container-based construction**. A chain runs reflective HMC inside the smooth convex container shown as the blue circle. The target support $K$ is shown in pink. Inside $K$, samples are retained. Outside $K$, the smooth penalty increases the potential and pushes the trajectory back toward the feasible region. At the container boundary, the
 trajectory reflects like a billiard ball, reversing only the velocity component normal to the boundary.
@@ -57,7 +54,6 @@ trajectory reflects like a billiard ball, reversing only the velocity component 
 
 ## Repository layout
 
----
 
 ```
 src/ 
@@ -73,7 +69,7 @@ example_polytope.py      PR-HMC on a polytope-constrained truncated Gaussian
 
 ## Installation
 
----
+
 
 ```bash
 pip install -r requirements.txt
@@ -81,7 +77,6 @@ pip install -r requirements.txt
 
 ## Examples
 
----
 
 Each example is self-contained; tuning constants are at the top of the file. The defaults are kept small so the scripts finish in a few minutes — increase `BURNIN`, `N_SAMPLES`, and the dimensions for paper-quality results (the paper uses `burnin = n_samples = 2000`, `4` chains, `50` leapfrog steps).
 

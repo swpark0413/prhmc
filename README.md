@@ -87,7 +87,7 @@ The first example samples from a matrix von Mises-Fisher distribution on $V_{p,k
 $$
 \pi(\Gamma)
 \propto
-\exp \left\{\omega \mathrm{tr}(A^\top \Gamma)\right\},
+\exp\{\omega \mathrm{tr}(A^\top \Gamma)\},
 \qquad
 A =
 \begin{bmatrix}

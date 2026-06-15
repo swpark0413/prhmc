@@ -6,38 +6,43 @@
 
 **Reflective Hamiltonian Monte Carlo (ReHMC)** samples from a distribution supported on a bounded domain by reflecting the Hamiltonian trajectory at the boundary of a feasible container. This repository implements a **convex-container-plus-thinning** approach for constrained targets. The main idea is to run reflective HMC on a simple smooth convex container and to use a smooth penalty to discourage trajectories from spending too much time outside the target support.
 
-1. **Convex container.** The target support $K$ is embedded in a smooth convex container $\widetilde K$, such as a Euclidean or Frobenius ball. Reflections are performed only at the boundary of this container.
-2. **Smooth penalty extension.** Outside $K$, the potential is modified by a smooth penalty
+**Convex container.** The target support $K$ is embedded in a smooth convex container $\widetilde{K}$, such as a Euclidean or Frobenius ball. Reflections are performed only at the boundary of this container.
 
-   $$
-   \tilde{U}(q) = U(q) + \lambda \psi\{\phi(q)/b\}.
-   $$
-   
-   Here $\phi$ is a **smooth boundary-violation surrogate**: it is small on feasible points and increases as the point moves outside $K$. This provides a differentiable approximation to a hard support constraint and keeps the numerical dynamics more stable.
+**Smooth penalty extension.** Outside $K$, the potential is modified by a smooth penalty
 
-4. **Thinning / retention.** The Markov chain is simulated on the container $\widetilde K$. Samples that fall inside the original support $K$ are retained and used to estimate expectations under the original constrained target. For targets on the **Stiefel manifold** 
+```math
+\widetilde{U}(q) = U(q) + \lambda\, \psi\!\left(\phi(q)/b\right).
+```
 
-   $$
-   V_{r,u} = \left\{ \Gamma \in \mathbb R^{r\times u} : \Gamma^\top \Gamma = I_u \right\},
-   $$
+Here $\phi$ is a **smooth boundary-violation surrogate**: it is small on feasible points and increases as the point moves outside $K$. This provides a differentiable approximation to a hard support constraint and keeps the numerical dynamics more stable.
 
-    the sampler uses the **polar reparameterization** 
+**Thinning / retention.** The Markov chain is simulated on the container $\widetilde{K}$. Samples that fall inside the original support $K$ are retained and used to estimate expectations under the original constrained target.
 
-   $$
-   \Gamma(B) = B(B^\top B)^{-1/2}.
-   $$
+For targets on the **Stiefel manifold**
 
-    The matrix $B$ is restricted to the well-conditioned set 
-   $$
-   K = \left\{ B \in \mathbb R^{r\times u} : \lambda_{\min}(B^\top B) \ge c,\; \|B\|_F^2 \le M \right\},
-   $$
+```math
+V_{r,u} = \left\{ \Gamma \in \mathbb{R}^{r \times u} : \Gamma^\top \Gamma = I_u \right\},
+```
 
-    which is embedded in the Frobenius ball 
-   $$
-   \widetilde K = \left\{ B : \|B\|_F^2 \le M \right\}.
-   $$
+the sampler uses the **polar reparameterization**
 
-    This gives the **Polar Reflective HMC (PR-HMC)** sampler. The lower bound $\lambda_{\min}(B^\top B) \ge c$ prevents the polar map from becoming ill-conditioned, while the Frobenius ball provides a simple reflection boundary.
+```math
+\Gamma(B) = B \left(B^\top B\right)^{-1/2}.
+```
+
+The matrix $B$ is restricted to the well-conditioned set
+
+```math
+K = \left\{ B \in \mathbb{R}^{r \times u} : \lambda_{\min}(B^\top B) \ge c, \; \lVert B \rVert_F^2 \le M \right\},
+```
+
+which is embedded in the Frobenius ball
+
+```math
+\widetilde{K} = \left\{ B : \lVert B \rVert_F^2 \le M \right\}.
+```
+
+This gives the **Polar Reflective HMC (PR-HMC)** sampler. The lower bound $\lambda_{\min}(B^\top B) \ge c$ prevents the polar map from becoming ill-conditioned, while the Frobenius ball provides a simple reflection boundary.
 
 ## How it works
 

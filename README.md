@@ -48,9 +48,12 @@ This gives the **Polar Reflective HMC (PR-HMC)** sampler. The lower bound $\lamb
 
 ---
 
-The animation below illustrates the **container-based construction**. A chain runs reflective HMC inside the smooth convex container shown as the blue circle. The target support $K$ is shown in pink. Inside $K$, samples are retained. Outside $K$, the smooth penalty increases the potential and pushes the trajectory back toward the feasible region. At the container boundary, the trajectory reflects specularly.
+The animation below illustrates the **container-based construction**. A chain runs reflective HMC inside the smooth convex container shown as the blue circle. The target support $K$ is shown in pink. Inside $K$, samples are retained. Outside $K$, the smooth penalty increases the potential and pushes the trajectory back toward the feasible region. At the container boundary, the
+trajectory reflects like a billiard ball, reversing only the velocity component normal to the boundary.
 
-![PR-HMC overview](assets/prhmc_overview.gif)
+<p align="center">
+  <img src="assets/prhmc_overview.gif" alt="PR-HMC overview" width="650">
+</p>
 
 ## Repository layout
 

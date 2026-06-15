@@ -1,5 +1,7 @@
 # PR-HMC: Polar Reflective Hamiltonian Monte Carlo
 
+> 📄 Paper: [Reflective Hamiltonian Monte Carlo: Mixing Analysis and Application to Sampling on Stiefel Manifold (ICML 2026)](https://icml.cc/virtual/2026/poster/66778)
+
 ## Overview
 
 **Reflective Hamiltonian Monte Carlo (ReHMC)** samples from a distribution supported on a bounded domain by reflecting the Hamiltonian trajectory at the boundary of a feasible container. This repository implements a **convex-container-plus-thinning** approach for constrained targets. The main idea is to run reflective HMC on a simple smooth convex container and to use a smooth penalty to discourage trajectories from spending too much time outside the target support.

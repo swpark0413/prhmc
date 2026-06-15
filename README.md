@@ -91,7 +91,7 @@ $$
 \qquad
 A =
 \begin{bmatrix}
-I_k \
+I_k \\
 0
 \end{bmatrix}.
 $$
